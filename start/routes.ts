@@ -4,6 +4,12 @@ import { middleware } from '#start/kernel'
 const BotController = () => import('#controllers/bots_controller') // ya lo tienes
 const BotConversationsController = () => import('#controllers/bot_conversations_controller')
 
+router.get('/', async () => {
+  return {
+    ok: true,
+    service: 'pos-bot-api',
+  }
+})
 // Rutas existentes bot/company-by-phone y bot/sales-report
 router
   .group(() => {
